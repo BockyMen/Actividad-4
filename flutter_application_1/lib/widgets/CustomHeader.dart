@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-
 class Customheader extends StatelessWidget{
   final Image imagen;
   final String title;
