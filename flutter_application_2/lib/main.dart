@@ -10,11 +10,35 @@ class MainApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
-      home: Scaffold(
-        appBar: AppBar.new(),
+    return Scaffold(
+        appBar: AppBar(title: const Text("First route"),),
         body: Center(
-          child: Text('Hello World!'),
+          child: ElevatedButton(
+            onPressed: () {
+              Navigator.push(context, MaterialPageRoute(builder: (context) => const MainApp(),));
+            }, 
+              child: Text('Hello World!'),
+            ),
+        ),
+      );
+  }
+}
+
+class MainApp2 extends StatelessWidget {
+  const MainApp2({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      home: Scaffold(
+        appBar: AppBar(title: const Text("First route"),),
+        body: Center(
+          child: ElevatedButton(
+            onPressed: () {
+              Navigator.pop(context);
+            }, 
+             child: Text('Hello World!'),
+            ),
         ),
       ),
     );
